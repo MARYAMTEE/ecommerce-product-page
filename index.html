@@ -75,12 +75,18 @@
 
             <div class="carts-controls">
                 <div class="quantity">
-                    <img src="./images/icon-minus.svg"  class="minus-icon" alt="Minus Icon" />
-                    <span class="amount">0</span>
-                    <img src="./images/icon-plus.svg" class="plus-icon" alt="Plus Icon" />
+                    <button class="minus-btn" aria-label="Decrease quantity">
+                        <img src="./images/icon-minus.svg" alt="" aria-hidden="true" />
+                    </button>
+
+                    <span class="display-quantity">0</span>
+
+                    <button class="plus-btn"  aria-label="Increase quantity">
+                        <img src="./images/icon-plus.svg" alt="" aria-hidden="true" />
+                    </button>
                 </div>
                 <button class="add-to-cart">
-                    <img src="./images/icon-cart.svg" alt="Cart" />
+                    <img src="./images/icon-cart.svg" class="addToCartBtn" alt="" />
                     <span>Add to cart</span>
                 </button>
             </div>
