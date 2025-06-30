@@ -37,7 +37,11 @@
         </nav>
 
         <div class="nav-icons">
-            <img src="./images/icon-cart.svg" class="cart-icon" alt="cart icon"/>
+            <div class="cart-container">
+                <img src="./images/icon-cart.svg" class="cart-icon" alt="cart icon"/>
+                <span id="item-count" class="item-count hidden">0</span>
+            </div>
+            
             <img src="./images/image-avatar.png" class="avatar-img" alt="Avatar Image">
         </div>
     </header>
@@ -81,7 +85,7 @@
 
                     <span class="display-quantity">0</span>
 
-                    <button class="plus-btn"  aria-label="Increase quantity">
+                    <button class="plus-btn"aria-label="Increase quantity">
                         <img src="./images/icon-plus.svg" alt="" aria-hidden="true" />
                     </button>
                 </div>
@@ -92,5 +96,26 @@
             </div>
         </section>
     </main>
+
+    <!-- Cart Section -->
+     <div class="cart-dropdown hidden">
+        <h3>Cart</h3>
+        <div class="cart-content">
+             <!-- When empty -->
+            <p class="empty-message"></p>
+
+            <!-- When item is added -->
+            <div class="cart-item">
+                <img src="./images/image-product-1-thumbnail.jpg" alt="Product" class="cart-thumb" />
+                <div class="item-details">
+                    <p class="product-name">Fall Limited Edition Sneakers</p>
+                    <p id="item-price" class="item-price"></p>
+                </div>
+                <img src="./images/icon-delete.svg" alt="Delete" class="delete-icon" />
+            </div>
+
+            <button class="checkout-btn">Checkout</button>
+        </div>
+     </div>
 </body>
 </html>
