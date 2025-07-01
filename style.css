@@ -19,6 +19,7 @@ img{
     max-width: 100%;
 }
 
+
 body{
     background-color: var(--white);
     font-family: "Kumbh Sans", sans-serif;
@@ -151,6 +152,7 @@ ul li a{
     width: 0.8rem;
     height: 0.8rem;
     object-fit: contain;
+    background: transparent;
 }
 
 .prev {
@@ -235,6 +237,7 @@ ul li a{
 .minus-btn, .plus-btn, .add-to-cart{
     border: none;
     outline: none;
+    background-color: transparent;
 }
 
 .add-to-cart{
