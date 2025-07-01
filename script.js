@@ -51,7 +51,7 @@ const itemCount = document.getElementById("item-count");
 
 
 const cartIcon = document.querySelector(".cart-icon");
-
+const checkoutBtn = document.querySelector(".checkout-btn");
 
 let currentIndex = 0;
 let quantity = 0;
@@ -105,6 +105,7 @@ function updateCartUI() {
   }else{
     emptyMessage.textContent = "";
     cartItem.classList.remove("hidden");
+    checkoutBtn.classList.remove("hidden");
   }
 };
 
@@ -130,5 +131,6 @@ deleteBtn.addEventListener("click", () => {
   itemCount.textContent = "0";
   quantity = 0;
   displayQuantity.textContent = "0";
+  checkoutBtn.classList.add("hidden");
   updateCartUI();
 });
