@@ -11,7 +11,7 @@ const nextBtn = document.querySelector(".next");
 const plusBtn = document.querySelector(".plus-btn");
 const minusBtn = document.querySelector(".minus-btn");
 const displayQuantity = document.querySelector(".display-quantity");
-const addToCartBtn = document.querySelector(".addToCartBtn");
+const addToCartBtn = document.querySelector(".add-to-cart");
 const emptyMessage = document.querySelector(".empty-message");
 const deleteBtn = document.querySelector(".delete-icon");
 
@@ -19,6 +19,10 @@ const cartDropdown = document.querySelector(".cart-dropdown");
 const cartContent = document.querySelector(".cart-content");
 const itemPrice = document.getElementById("item-price");
 const itemCount = document.getElementById("item-count");
+
+
+const cartIcon = document.querySelector(".cart-icon");
+
 
 let currentIndex = 0;
 let quantity = 0;
@@ -53,32 +57,45 @@ minusBtn.addEventListener("click", () => {
 
 // Add to cart button
 addToCartBtn.addEventListener("click", () => {
-    if(quantity === 0) return;
+  if (quantity === 0) {
+    return;
+  }
 
-    const total = (price * quantity).toFixed(2);
+  const total = (price * quantity).toFixed(2);
 
-      itemPrice.innerHTML = `
+  itemPrice.innerHTML = `
     $${price.toFixed(2)} × ${quantity} 
     <strong class="total-price">$${total}</strong>
-    `;
+  `;
 
-    // if(itemPrice){
-    //     itemPrice.innerHTML = `$${price.toFixed(2)} x ${quantity} <strong class="total-price">$${total}</strong>`;
-    // }
+  itemCount.textContent = quantity;
+  itemCount.classList.remove("hidden");
 
-    cartDropdown.classList.remove("hidden");
-    itemCount.classList.remove("hidden");
-    itemCount.textContent = quantity;
-    emptyMessage.textContent = "";
-    console.log("Item Price Element:", itemPrice);
-    console.log("Item Count Element:", itemCount);
+  cartDropdown.classList.remove("hidden");
 });
 
-// Delete Item from cart
+
+// Delete from cart
 deleteBtn.addEventListener("click", () => {
-    if (itemPrice) itemPrice.innerHTML = "";
-    itemCount.classList.add("hidden");
-    quantity = 0;
-    displayQuantity.textContent = "0";
+  itemPrice.innerHTML = "";
+  itemCount.classList.add("hidden");
+  itemCount.textContent = "0";
+  quantity = 0;
+  displayQuantity.textContent = "0";
+  // emptyMessage.textContent = "Your cart is empty.";
+});
+
+
+cartIcon.addEventListener("click", () => {
+  cartDropdown.classList.toggle("hidden");
+
+  const cartItem = document.querySelector(".cart-item");
+
+  if(quantity === 0) {
     emptyMessage.textContent = "Your cart is empty.";
+    cartItem.classList.add("hidden");
+  }else{
+    emptyMessage.textContent = "";
+    cartItem.classList.remove("hidden");
+  }
 });
