@@ -40,10 +40,17 @@ nav{
     position: fixed;
     left: 0;
     top: 0;
+    overflow: hidden;
     height: 100%;
     width: 15rem;
     background-color: var(--white);
     z-index: 10;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in-out;
+}
+
+nav.toggle{
+    transform: translate(0);
 }
 
 ul {
@@ -59,12 +66,8 @@ ul li{
 ul li a{
     text-decoration: none;
     font-size: 1rem;
-    font-weight: 700;
+    font-weight: 800;
     color: var(--very-dark-blue);
-}
-
-.hidden{
-    display: none;
 }
 
 .nav-icons{
@@ -78,4 +81,19 @@ ul li a{
     position: absolute;
     left: 1.5rem;
     top: 1.5rem;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.hidden{
+    display: none;
 }

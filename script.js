@@ -1,3 +1,32 @@
+// Navigation bar control
+const openNav = document.querySelector(".open-btn");
+const closeNav = document.querySelector(".close-btn");
+const navBar = document.querySelector("nav");
+const navLink = document.querySelectorAll(".nav-link");
+const overlay = document.querySelector(".overlay");
+
+openNav.addEventListener("click", () => {
+  navBar.classList.toggle("toggle");
+  overlay.style.display="block";
+});
+
+closeNav.addEventListener("click", ()=> {
+  navBar.classList.remove("toggle");
+  overlay.style.display="none";
+});
+
+overlay.addEventListener("click", () => {
+  navBar.classList.remove("toggle");
+  overlay.style.display="none";
+});
+
+navLink.forEach(link => {
+  link.addEventListener("click", () => {
+    navBar.classList.remove("toggle");
+    overlay.style.display="none";
+  });
+});
+
 const imageSources = [
     "images/image-product-1.jpg",
     "images/image-product-2.jpg",

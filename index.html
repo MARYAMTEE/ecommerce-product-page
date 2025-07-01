@@ -20,7 +20,7 @@
 <body>
     <header>
         <button>
-            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            <i class="fa-solid fa-bars open-btn" aria-hidden="true"></i>
             <span class="sr-only">Navigation Bar</span>
         </button>
         <div class="logo">
@@ -29,11 +29,11 @@
         <nav aria-label="Primary">
             <img src="./images/icon-close.svg" class="close-btn" alt="Close Icon" />
             <ul>
-                <li><a href="#">Collections</a></li>
-                <li><a href="#">Men</a></li>
-                <li><a href="#">Women</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a class="nav-link" href="#">Collections</a></li>
+                <li><a class="nav-link" href="#">Men</a></li>
+                <li><a class="nav-link" href="#">Women</a></li>
+                <li><a class="nav-link" href="#">About</a></li>
+                <li><a class="nav-link" href="#">Contact</a></li>
             </ul>
         </nav>
 
@@ -46,6 +46,8 @@
             <img src="./images/image-avatar.png" class="avatar-img" alt="Avatar Image">
         </div>
     </header>
+
+    <div class="overlay" id="overlay"></div>
 
     <main class="product-container">
         <section class="image-section">
