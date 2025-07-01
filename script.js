@@ -132,15 +132,3 @@ deleteBtn.addEventListener("click", () => {
   displayQuantity.textContent = "0";
   updateCartUI();
 });
-
-
-// Disable zoom when double tapped
-let lastTouch = 0;
-
-document.addEventListener('touchend', function(e) {
-  const now = new Date().getTime();
-  if (now - lastTouch <= 300) {
-    e.preventDefault();
-  }
-  lastTouch = now;
-}, false);

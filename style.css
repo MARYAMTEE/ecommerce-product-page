@@ -230,7 +230,7 @@ ul li a{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 1.5rem;
+    padding: 1.2rem 1.5rem;
     border-radius: 0.5rem;
 }
 
@@ -238,6 +238,15 @@ ul li a{
     border: none;
     outline: none;
     background-color: transparent;
+}
+
+.minus-btn img, .plus-btn img{
+    width: 1.1rem;
+}
+
+.display-quantity{
+    font-weight: 700;
+    font-size: 1.5rem;
 }
 
 .add-to-cart{
