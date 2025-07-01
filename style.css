@@ -32,8 +32,20 @@ header{
     background-color: white;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
     position: relative;
+}
+
+.nav-left,
+.nav-right{
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-left{
+    gap: 1rem;
 }
 
 nav{
@@ -70,12 +82,6 @@ ul li a{
     color: var(--very-dark-blue);
 }
 
-.nav-icons{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 /* close side nav icon */
 .close-btn{
     position: absolute;
@@ -94,6 +100,64 @@ ul li a{
     display: none;
 }
 
+/* Avatar Image */
+.avatar-img{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
 .hidden{
     display: none;
 }
+
+/* Thumnail Images */
+.thumbnail-images{
+    display: none;
+}
+
+/* main Image */
+.main-img{
+    position: relative;
+}
+
+.main-image{
+    width: 100%; 
+    height: 18.75rem;
+    object-fit: cover;
+}
+
+/* Previous and Next button */
+.prev,
+.next{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--white);
+    font-size: 2rem;
+    border-radius: 50%;
+    padding: 0.7rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+}
+
+.prev img, 
+.next img {
+    width: 0.8rem;
+    height: 0.8rem;
+    object-fit: contain;
+}
+
+.prev {
+  left: 1rem;
+}
+
+.next {
+  right: 1rem;
+}
+
+/* Details */
+
