@@ -12,16 +12,13 @@
     --grayish-blue: hsl(220, 14%, 75%);
     --light-grayish-blue: hsl(223, 64%, 98%);
     --white: hsl(0, 0%, 100%);
-    --black: hsl(0, 0%, 0%);
+    --black: rgba(0, 0, 0, 0.75);
 }
 
 img{
     max-width: 100%;
 }
 
-/*  
-(with 75% opacity for lightbox background)
-*/
 body{
     background-color: var(--white);
     font-family: "Kumbh Sans", sans-serif;
@@ -101,7 +98,7 @@ ul li a{
     width: 100%;
     height: 100%;
     z-index: 5;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--black);
     display: none;
 }
 
@@ -180,10 +177,13 @@ ul li a{
 .description{
     line-height: 1.7;
     padding: 0.5rem 0 1rem 0;
-    color: var(--dark-grayish-blue)
+    color: var(--dark-grayish-blue);
 }
 
 .details-section{
+    width: 100%;
+    max-width: 25rem;
+    margin: 0 auto;
     padding: 1.5rem;
 }
 
