@@ -336,16 +336,17 @@ ul li a{
     color: var(--very-dark-blue);
 }
 /* The item count on the cart icon in the homepage */
-.cart-icon{
+.cart-container{
     position: relative;
 }
 
 .item-count{
     position: absolute;
-    top: 1rem;
+    top: -0.4rem;
+    right: -0.4rem;
     background-color: var(--orange);
     color: var(--pale-orange);
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     font-weight: 700;
     padding: 0 0.5rem;
     border-radius: 0.5rem;
@@ -395,7 +396,7 @@ ul li a{
     }
 
     header{
-        padding: 3rem 2rem;
+        padding: 2rem 0;
         border-bottom: 1px solid var(--grayish-blue);
     }
 
@@ -407,15 +408,24 @@ ul li a{
         display: none;
     }
 
-    .avatar-img, .cart-icon, .logo-image{
-        width: 100%;
+    .avatar-img{
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .cart-icon{
+        width: 3.3rem;
+    }
+
+    .logo-image{
+        width: 11rem;
     }
 
     .nav-right{
         gap: 2rem;
     }
 
-    .thumbnail-image-section{
+    .thumbnail-image-section, .lightbox-content{
         display: grid;
         gap: 1.5rem;
     }
@@ -428,12 +438,11 @@ ul li a{
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 6rem 1rem;
+        margin: 5rem 1rem;
     }
 
-    .main-thumb{
+    .main-thumb, .lightbox-main-image{
         width: 27rem;
-        /* height: 26rem; */
         border-radius: 0.8rem;
     }
 
@@ -441,7 +450,7 @@ ul li a{
         flex: 1;
     }
 
-    .thumbnail-images{
+    .thumbnail-images, .lightbox-thumbnails{
         display: flex;
         gap: 2rem;
     }
@@ -482,5 +491,17 @@ ul li a{
 
     .company-name{
         font-size: 0.8rem;
+    }
+
+    .cart-dropdown{
+        top: 6rem;
+        right: 5%;
+        left: auto;
+        transform: none;
+    }
+
+    /* ligthbox section */
+    .lightbox-content{
+        place-items: center;
     }
 }

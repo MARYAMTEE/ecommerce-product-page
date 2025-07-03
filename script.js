@@ -139,6 +139,9 @@ deleteBtn.addEventListener("click", () => {
 const mainThumb = document.querySelector(".main-thumb");
 const productThumbs = document.querySelectorAll(".thumbnail-images .thumb");
 
+const lightboxImgage = document.querySelector(".lightbox-main-image");
+const lightboxThumbs = document.querySelectorAll(".lightbox-thumbnails .thumb")
+
 productThumbs.forEach((thumb, i) => {
   thumb.dataset.index = i;
   thumb.addEventListener("click", () => {
@@ -148,8 +151,30 @@ productThumbs.forEach((thumb, i) => {
   });
 });
 
+// Lightbox thumbnails
+lightboxThumbs.forEach((thumb, i) => {
+  thumb.dataset.index = i;
+  thumb.addEventListener("click", () => {
+    currentIndex = i;
+    lightboxImgage.src = imageSources[currentIndex];
+    updateActiveThumbs(lightboxThumbs, i);
+  });
+});
+
 function updateActiveThumbs(thumbnails, activeIndex){
   thumbnails.forEach((thumb, i) => {
     thumb.classList.toggle("active", i === activeIndex);
   });
 };
+
+mainThumb.addEventListener("click", () => {
+  lightbox.classList.remove("hidden");
+})
+
+// close lightbox
+const lightbox = document.querySelector(".lightbox")
+const closeLightbox = document.querySelector(".close-lightbox");
+
+closeLightbox.addEventListener("click", () => {
+  lightbox.classList.add("hidden");
+})
