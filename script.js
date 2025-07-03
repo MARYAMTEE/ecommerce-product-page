@@ -28,10 +28,10 @@ navLink.forEach(link => {
 });
 
 const imageSources = [
-    "images/image-product-1.jpg",
-    "images/image-product-2.jpg",
-    "images/image-product-3.jpg",
-    "images/image-product-4.jpg"
+    "./images/image-product-1.jpg",
+    "./images/image-product-2.jpg",
+    "./images/image-product-3.jpg",
+    "./images/image-product-4.jpg"
 ];
 
 const mainImage = document.querySelector(".main-image");
@@ -134,3 +134,22 @@ deleteBtn.addEventListener("click", () => {
   checkoutBtn.classList.add("hidden");
   updateCartUI();
 });
+
+// Desktop view images control
+const mainThumb = document.querySelector(".main-thumb");
+const productThumbs = document.querySelectorAll(".thumbnail-images .thumb");
+
+productThumbs.forEach((thumb, i) => {
+  thumb.dataset.index = i;
+  thumb.addEventListener("click", () => {
+    currentIndex = i;
+    mainThumb.src = imageSources[currentIndex];
+    updateActiveThumbs(productThumbs, i);
+  });
+});
+
+function updateActiveThumbs(thumbnails, activeIndex){
+  thumbnails.forEach((thumb, i) => {
+    thumb.classList.toggle("active", i === activeIndex);
+  });
+};

@@ -115,14 +115,14 @@ ul li a{
 }
 
 /* Thumnail Images */
-.thumbnail-images{
+.thumbnail-image-section{
     display: none;
 }
 
 /* main Image */
-.main-img{
+/* .main-img{
     position: relative;
-}
+} */
 
 .main-image{
     width: 100%; 
@@ -335,4 +335,85 @@ ul li a{
 
 .total-price{
     color: var(--very-dark-blue);
+}
+/* The item count on the cart icon in the homepage */
+.cart-icon{
+    position: relative;
+}
+
+.item-count{
+    position: absolute;
+    top: 1rem;
+    background-color: var(--orange);
+    color: var(--pale-orange);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0 0.5rem;
+    border-radius: 0.5rem;
+}
+
+@media (min-width: 64rem){
+    .open-btn, .close-btn{
+        display: none;
+    }
+
+    nav{
+        position: relative;
+        top: 0; 
+        padding: 0;
+        height: auto;
+        left: auto;
+        transform: translateX(0);
+        background-color: transparent;
+        width: 100%;
+        display: flex;
+    }
+
+    ul{
+        margin: 0;
+        margin-inline-start: 2rem;
+    }
+
+    ul li{
+        display: inline-block;
+        margin: 0 1rem;
+    }
+
+    ul li a{
+        font-weight: 500;
+        color: var(--dark-grayish-blue);
+    }
+
+    header{
+        padding: 3rem 2rem;
+        border-bottom: 1px solid var(--grayish-blue);
+    }
+
+    .main-image, 
+    .prev, 
+    .next,
+    .prev img, 
+    .next img {
+        display: none;
+    }
+
+    .avatar-img, .cart-icon, .logo-image{
+        width: 100%;
+    }
+
+    .nav-right{
+        gap: 2rem;
+    }
+
+    .thumbnail-image-section{
+        display: block;
+    }
+
+    /* .details-section{
+        max-width: 100%;
+    } */
+
+    .product-container{
+        display: flex;
+    }
 }
