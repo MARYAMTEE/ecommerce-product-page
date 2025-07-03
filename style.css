@@ -139,7 +139,7 @@ ul li a{
     background-color: var(--white);
     font-size: 2rem;
     border-radius: 50%;
-    padding: 0.7rem;
+    padding: 1rem;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -235,7 +235,7 @@ ul li a{
     border-radius: 0.5rem;
 }
 
-.minus-btn, .plus-btn, .add-to-cart{
+.minus-btn, .plus-btn, .add-to-cart, .close-lightbox{
     border: none;
     outline: none;
     background-color: transparent;
@@ -502,6 +502,32 @@ ul li a{
 
     /* ligthbox section */
     .lightbox-content{
+        position: relative;
         place-items: center;
+    }
+
+    .lightbox-image-wrapper{
+        position: relative;
+    }
+
+    .lightbox{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+    }
+
+    .close-lightbox{
+        font-size: 3rem;
+        left: 0;
+    }
+
+    .lightbox-prev {
+        left: -5rem;
+    }
+
+    .lightbox-next {
+        right: -5rem;
     }
 }

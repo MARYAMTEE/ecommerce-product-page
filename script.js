@@ -169,6 +169,7 @@ function updateActiveThumbs(thumbnails, activeIndex){
 
 mainThumb.addEventListener("click", () => {
   lightbox.classList.remove("hidden");
+  overlay.style.display="block";
 })
 
 // close lightbox
@@ -177,4 +178,5 @@ const closeLightbox = document.querySelector(".close-lightbox");
 
 closeLightbox.addEventListener("click", () => {
   lightbox.classList.add("hidden");
+  overlay.classList.add("hidden");
 })
