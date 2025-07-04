@@ -37,7 +37,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.5rem;
+    padding: 1.4rem;
     position: relative;
 }
 
@@ -101,7 +101,6 @@ ul li a{
     height: 100%;
     z-index: 5;
     background-color: var(--black);
-    display: none;
 }
 
 /* Avatar Image */
@@ -175,6 +174,8 @@ ul li a{
 
 .product-name{
     font-size: 2rem;
+    line-height: 1.1;
+    padding-block-end: 0.5rem;
 }
 
 .description{
@@ -210,7 +211,7 @@ ul li a{
 }
 
 .old-price{
-    font-size: 1.4rem;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--dark-grayish-blue);
     text-decoration: line-through;
@@ -462,7 +463,6 @@ ul li a{
     
     .product-name {
         font-size: 2.6rem;
-        line-height: 1.1;
         padding: 0.5rem 0;
     }
 
@@ -479,14 +479,6 @@ ul li a{
         flex-direction: column;
         align-items: start;
         gap: 1rem;
-    }
-
-    .old-price{
-        font-size: 1rem;
-    }
-
-    .current-price{
-        font-size: 1.7rem;
     }
 
     .company-name{

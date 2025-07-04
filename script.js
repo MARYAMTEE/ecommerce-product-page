@@ -7,24 +7,28 @@ const overlay = document.querySelector(".overlay");
 
 openNav.addEventListener("click", () => {
   navBar.classList.toggle("toggle");
-  overlay.style.display="block";
+  overlay.classList.remove("hidden");
 });
 
 closeNav.addEventListener("click", ()=> {
   navBar.classList.remove("toggle");
-  overlay.style.display="none";
+  overlay.classList.add("hidden");
 });
 
 overlay.addEventListener("click", () => {
-  navBar.classList.remove("toggle");
-  overlay.style.display="none";
+  if(window.innerWidth <= 768) {
+    navBar.classList.remove("toggle");
+    overlay.classList.add("hidden");
+  }
 });
 
 navLink.forEach(link => {
-  link.addEventListener("click", () => {
+  if(window.innerWidth <= 768) {
+    link.addEventListener("click", () => {
     navBar.classList.remove("toggle");
-    overlay.style.display="none";
+    overlay.classList.add("hidden");
   });
+  }
 });
 
 const imageSources = [
@@ -119,7 +123,7 @@ addToCartBtn.addEventListener("click", () => {
 
 // Cart Icon in the header
 cartIcon.addEventListener("click", () => {
-  cartDropdown.classList.toggle("hidden");
+  cartDropdown.classList.remove("hidden");
 
   updateCartUI();
 });
@@ -169,7 +173,7 @@ function updateActiveThumbs(thumbnails, activeIndex){
 
 mainThumb.addEventListener("click", () => {
   lightbox.classList.remove("hidden");
-  overlay.style.display="block";
+  overlay.classList.remove("hidden");
 })
 
 // close lightbox
