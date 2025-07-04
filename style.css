@@ -239,7 +239,10 @@ ul li a{
     border-radius: 0.5rem;
 }
 
-.minus-btn, .plus-btn, .add-to-cart, .close-lightbox{
+.minus-btn,
+.plus-btn,
+.add-to-cart,
+.close-lightbox{
     border: none;
     outline: none;
     background-color: transparent;
@@ -362,6 +365,7 @@ ul li a{
         display: flex;
         justify-content: center;
         width: 100%;
+        margin-block-end: fit-content;
     }
 
     .container{
@@ -429,7 +433,7 @@ ul li a{
         gap: 2rem;
     }
 
-    .thumbnail-image-section, .lightbox-content{
+    .thumbnail-image-section{
         display: grid;
         gap: 1.5rem;
     }
@@ -445,7 +449,7 @@ ul li a{
         margin: 5rem 1rem;
     }
 
-    .main-thumb, .lightbox-main-image{
+    .main-thumb{
         width: 27rem;
         border-radius: 0.8rem;
     }
@@ -454,7 +458,8 @@ ul li a{
         flex: 1;
     }
 
-    .thumbnail-images, .lightbox-thumbnails{
+    .thumbnail-images,
+    .lightbox-thumbnails{
         display: flex;
         gap: 2rem;
     }
@@ -496,7 +501,23 @@ ul li a{
     }
 
     /* ligthbox section */
-    .lightbox-content{
+    .lightbox-main-image {
+        width: 30rem;
+        height: 30rem;
+        border-radius: 1.5rem;
+    }
+
+    .lightbox-thumbnails{
+        gap: 1.5rem;
+    }
+
+    .lightbox-thumbnails .thumb{
+        width: 5rem;
+    }
+
+    .thumnails-container{
+        display: grid;
+        gap: 2rem;
         position: relative;
         place-items: center;
     }
@@ -507,15 +528,30 @@ ul li a{
 
     .lightbox{
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 1000;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+    }
+
+    /* Lightbox close button */
+    .lightbox-content{
+        position: relative;
+        width: 100%;
     }
 
     .close-lightbox{
-        font-size: 3rem;
-        left: 0;
+        position: absolute;
+        top: -3rem;
+        right: 25rem; 
+        color: var(--white);
+        font-size: 1.8rem;
+        cursor: pointer;
+        z-index: 1;
     }
 
     /* Lightbox Previous and next control */
@@ -529,7 +565,7 @@ ul li a{
 
     .lightbox-prev,
     .lightbox-next{
-        width: 4rem;
-        height: 4rem;
+        width: 3.5rem;
+        height: 3.5rem;
     }
 }

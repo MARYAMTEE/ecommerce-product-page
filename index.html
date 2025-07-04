@@ -130,29 +130,33 @@
         </div>
         
         <!-- Lightbox Modal (desktop only) -->
-        <div class="lightbox">
+        <div class="lightbox hidden">
             <div class="lightbox-content">
-                <button class="close-lightbox">&times;</button>
+                <button class="close-lightbox" aria-label="Close lightbox">
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
 
-                <div class="lightbox-image-wrapper">
-                    <button class="lightbox-prev" aria-label="Previous Image">
-                        <img src="./images/icon-previous.svg" alt="" aria-hidden="true" />
-                    </button>
+                <div class="thumnails-container">
+                    <div class="lightbox-image-wrapper">
+                        <button class="lightbox-prev" aria-label="Previous Image">
+                            <img src="./images/icon-previous.svg" alt="" aria-hidden="true" />
+                        </button>
 
-                    <img class="lightbox-main-image" src="images/image-product-1.jpg" alt="Large product" />
-                    
-                    <button class="lightbox-next" aria-label="Next Image">
-                        <img src="./images/icon-next.svg" alt="" aria-hidden="true" />
-                    </button>
+                        <img class="lightbox-main-image" src="images/image-product-1.jpg" alt="Large product" />
+                        
+                        <button class="lightbox-next" aria-label="Next Image">
+                            <img src="./images/icon-next.svg" alt="" aria-hidden="true" />
+                        </button>
+                    </div>
+
+                    <div class="lightbox-thumbnails">
+                        <img class="thumb" src="images/image-product-1-thumbnail.jpg" alt="Thumb 1" data-index="0" />
+                        <img class="thumb" src="images/image-product-2-thumbnail.jpg" alt="Thumb 2" data-index="1" />
+                        <img class="thumb" src="images/image-product-3-thumbnail.jpg" alt="Thumb 3" data-index="2" />
+                        <img class="thumb" src="images/image-product-4-thumbnail.jpg" alt="Thumb 4" data-index="3" />
+                    </div>
                 </div>
-
-                <div class="lightbox-thumbnails">
-                    <img class="thumb" src="images/image-product-1-thumbnail.jpg" alt="Thumb 1" data-index="0" />
-                    <img class="thumb" src="images/image-product-2-thumbnail.jpg" alt="Thumb 2" data-index="1" />
-                    <img class="thumb" src="images/image-product-3-thumbnail.jpg" alt="Thumb 3" data-index="2" />
-                    <img class="thumb" src="images/image-product-4-thumbnail.jpg" alt="Thumb 4" data-index="3" />
-                </div>
-        </div>
+            </div>
         </div>
     </div>
 </body>
