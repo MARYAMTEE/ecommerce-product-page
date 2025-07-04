@@ -39,8 +39,8 @@ const imageSources = [
 ];
 
 const mainImage = document.querySelector(".main-image");
-const prevBtn = document.querySelector(".prev");
-const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".main-img .prev");
+const nextBtn = document.querySelector(".main-img .next");
 const plusBtn = document.querySelector(".plus-btn");
 const minusBtn = document.querySelector(".minus-btn");
 const displayQuantity = document.querySelector(".display-quantity");
@@ -143,7 +143,7 @@ deleteBtn.addEventListener("click", () => {
 const mainThumb = document.querySelector(".main-thumb");
 const productThumbs = document.querySelectorAll(".thumbnail-images .thumb");
 
-const lightboxImgage = document.querySelector(".lightbox-main-image");
+const lightboxImage = document.querySelector(".lightbox-main-image");
 const lightboxThumbs = document.querySelectorAll(".lightbox-thumbnails .thumb")
 
 productThumbs.forEach((thumb, i) => {
@@ -160,7 +160,7 @@ lightboxThumbs.forEach((thumb, i) => {
   thumb.dataset.index = i;
   thumb.addEventListener("click", () => {
     currentIndex = i;
-    lightboxImgage.src = imageSources[currentIndex];
+    lightboxImage.src = imageSources[currentIndex];
     updateActiveThumbs(lightboxThumbs, i);
   });
 });
@@ -183,4 +183,18 @@ const closeLightbox = document.querySelector(".close-lightbox");
 closeLightbox.addEventListener("click", () => {
   lightbox.classList.add("hidden");
   overlay.classList.add("hidden");
-})
+});
+
+// Next and Prev lightbox control
+const lightboxPrev = document.querySelector(".lightbox-prev");
+const lightboxNext = document.querySelector(".lightbox-next");
+
+lightboxPrev.addEventListener("click", () =>{
+  currentIndex = (currentIndex - 1 + imageSources.length) % imageSources.length;
+  lightboxImage.src = imageSources[currentIndex];
+});
+
+lightboxNext.addEventListener("click", () => {
+  currentIndex = (currentIndex + 1 + imageSources.length) % imageSources.length;
+  lightboxImage.src = imageSources[currentIndex];
+});
