@@ -23,12 +23,14 @@ overlay.addEventListener("click", () => {
 });
 
 navLink.forEach(link => {
-  if(window.innerWidth <= 768) {
-    link.addEventListener("click", () => {
-    navBar.classList.remove("toggle");
-    overlay.classList.add("hidden");
+  link.addEventListener("click", () => {
+    navLink.forEach(nav => nav.classList.remove("active"));
+    link.classList.add("active");
+    if(window.innerWidth <= 768) {
+      navBar.classList.remove("toggle");
+      overlay.classList.add("hidden");
+    }
   });
-  }
 });
 
 const imageSources = [
