@@ -117,8 +117,8 @@ function updateCartUI() {
 addToCartBtn.addEventListener("click", () => {
   if(quantity === 0) return;
 
-  cartDropdown.classList.remove("hidden");
-  updateCartUI()
+  updateCartUI();
+  displayQuantity.textContent = 0;
 })
 
 // Cart Icon in the header
@@ -128,11 +128,24 @@ cartIcon.addEventListener("click", () => {
   updateCartUI();
 });
 
+// close cart when anywhere outside the cart is clicked
+document.addEventListener("click", (e) => {
+  const clickInsideCart = cartDropdown.contains(e.target);
+  const clickOutsideCart = cartIcon.contains(e.target);
+
+  if(!clickInsideCart && !clickOutsideCart) {
+    cartDropdown.classList.add("hidden");
+
+    if (quantity === 0) {
+      itemCount.classList.add("hidden");
+    }
+  }
+})
+
 // Delete from cart
 deleteBtn.addEventListener("click", () => {
   itemPrice.innerHTML = "";
   itemCount.classList.add("hidden");
-  itemCount.textContent = "0";
   quantity = 0;
   displayQuantity.textContent = "0";
   checkoutBtn.classList.add("hidden");
