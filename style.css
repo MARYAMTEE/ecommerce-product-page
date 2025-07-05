@@ -52,6 +52,10 @@ header{
     gap: 1rem;
 }
 
+.open-btn, .close-btn{
+    width: 1.3rem;
+}
+
 nav{
     position: fixed;
     left: 0;
@@ -89,7 +93,6 @@ ul li a{
 .product-container{
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
 }
 
 /* close side nav icon */
@@ -127,12 +130,14 @@ ul li a{
 /* main Image */
 .main-img{
     position: relative;
+    width: 100%;
 }
 
 .main-image{
     width: 100%; 
     height: 18.75rem;
     object-fit: cover;
+    object-position: top;
 }
 
 /* Previous and Next button */
@@ -198,6 +203,7 @@ ul li a{
     max-width: 25rem;
     margin-block-end: 4rem;
     padding: 1.5rem;
+    margin-inline: auto;
 }
 
 /* Prices */
@@ -366,23 +372,42 @@ ul li a{
     border-radius: 0.5rem;
 }
 
+/* Thumb images */
+.thumbnail-images,
+.lightbox-thumbnails{
+    display: flex;
+    gap: 2rem;
+}
+
+.thumb{
+    width: 5.2rem;
+    border-radius: 0.5rem;
+}
+
+.thumb.active {
+    border: 2px solid var(--orange);
+    opacity: 0.3;
+}
+
 @media (min-width: 71.875rem){
 
     body{
         display: flex;
         justify-content: center;
         width: 100%;
-        
     }
 
-    .container{
+     .container{
         width: 80%;
-    }
+        max-width: 70rem;
+        margin: 0 auto;
+    }  
     
     .open-btn, .close-btn{
         display: none;
     }
 
+    /* navigation bar */
     nav{
         position: relative;
         top: 0; 
@@ -452,6 +477,7 @@ ul li a{
 
      .details-section{
         max-width: 30rem;
+        margin-block-end: 0;
     } 
 
     .product-container{
@@ -468,22 +494,6 @@ ul li a{
 
     .similar-class{
         flex: 1;
-    }
-
-    .thumbnail-images,
-    .lightbox-thumbnails{
-        display: flex;
-        gap: 2rem;
-    }
-
-    .thumb{
-        width: 5.2rem;
-        border-radius: 0.5rem;
-    }
-
-    .thumb.active {
-        border: 2px solid var(--orange);
-        opacity: 0.3;
     }
     
     .product-name {
@@ -559,14 +569,16 @@ ul li a{
     .lightbox-content{
         position: relative;
         width: 100%;
+        max-width: 37rem;
+        margin: auto;
     }
 
     .close-lightbox{
         position: absolute;
-        top: -3rem;
-        right: 25rem; 
+        top: -4rem;
+        right: 4rem; 
         color: var(--white);
-        font-size: 1.8rem;
+        font-size: 2.5rem;
         cursor: pointer;
         z-index: 1;
     }
@@ -584,5 +596,185 @@ ul li a{
     .lightbox-next{
         width: 3.5rem;
         height: 3.5rem;
+    }
+}
+
+@media (min-width: 43.75rem) and (max-width: 71.874rem){
+
+    body{
+        display: flex;
+        justify-content: center;
+    }
+
+    .open-btn, .close-btn{
+        display: none;
+    }
+
+    /* navigation bar */
+    nav{
+        position: relative;
+        top: 0; 
+        padding: 0;
+        height: auto;
+        left: auto;
+        transform: translateX(0);
+        background-color: transparent;
+        width: 100%;
+        display: flex;
+    }
+
+    ul{
+        margin: 0;
+        margin-inline-start: 1rem;
+    }
+
+    ul li{
+        display: inline-block;
+        margin: 0 1rem;
+    }
+
+    ul li a{
+        font-weight: 500;
+        color: var(--dark-grayish-blue);
+        display: inline-block;
+    }
+
+    ul li a.active{
+        border-block-end: 3px solid var(--orange);
+    }
+
+    header{
+        padding: 2rem 1rem;
+        border-bottom: 1px solid var(--grayish-blue);
+    }
+
+    .avatar-img{
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .cart-icon{
+        width: 3rem;
+    }
+        
+    .product-container{
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 3rem 1rem;
+    }
+    .thumbnail-image-section{
+        display: grid;
+        gap: 1.5rem;
+    }
+   
+    .similar-class{
+        flex: 1;
+    } 
+
+    .main-img{
+        display: none;
+    }
+
+    .main-thumb{
+        width: 20rem;
+        border-radius: 0.8rem;
+    }
+
+    .thumb{
+        width: 3.5rem;
+    }
+
+    .details-section{
+        max-width: 30rem;
+        margin-block-end: 0;
+    }
+
+    /* buttons container */
+    .carts-controls{
+        grid-template-columns: 1.5fr 2fr;
+    }
+    .quantity, .add-to-cart{
+        padding: 1rem;
+    }
+
+    /* ligthbox section */
+    .lightbox-main-image {
+        width: 26rem;
+        height: 26rem;
+        border-radius: 1.5rem;
+    }
+
+    .lightbox-thumbnails{
+        gap: 1.5rem;
+    }
+
+    .lightbox-thumbnails .thumb{
+        width: 5rem;
+    }
+
+    .thumnails-container{
+        display: grid;
+        gap: 2rem;
+        position: relative;
+        place-items: center;
+    }
+
+    .lightbox-image-wrapper{
+        position: relative;
+    }
+
+    .lightbox{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+    }
+
+    /* Lightbox close button */
+    .lightbox-content{
+        position: relative;
+        width: 100%;
+        max-width: 37.5rem;
+        margin: auto;
+    }
+
+    .close-lightbox{
+        position: absolute;
+        top: -3rem;
+        right: 6rem; 
+        color: var(--white);
+        font-size: 2.5rem;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    /* Lightbox Previous and next control */
+    .lightbox-prev {
+        left: -2rem;
+    }
+
+    .lightbox-next {
+        right: -2rem;
+    }
+
+    .lightbox-prev,
+    .lightbox-next{
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    /* cart */
+
+    .cart-dropdown{
+        top: 6rem;
+        right: 2%;
+        left: auto;
+        transform: none;
     }
 }

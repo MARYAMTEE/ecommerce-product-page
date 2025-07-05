@@ -16,7 +16,7 @@ closeNav.addEventListener("click", ()=> {
 });
 
 overlay.addEventListener("click", () => {
-  if(window.innerWidth <= 768) {
+  if(window.innerWidth <= 700) {
     navBar.classList.remove("toggle");
     overlay.classList.add("hidden");
   }
@@ -26,7 +26,7 @@ navLink.forEach(link => {
   link.addEventListener("click", () => {
     navLink.forEach(nav => nav.classList.remove("active"));
     link.classList.add("active");
-    if(window.innerWidth <= 768) {
+    if(window.innerWidth <= 700) {
       navBar.classList.remove("toggle");
       overlay.classList.add("hidden");
     }
