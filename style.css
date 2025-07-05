@@ -41,6 +41,10 @@ header{
     position: relative;
 }
 
+button, img {
+  touch-action: manipulation;
+}
+
 .nav-left,
 .nav-right{
     display: flex;
@@ -52,7 +56,7 @@ header{
     gap: 1rem;
 }
 
-.open-btn, .close-btn{
+.openBtn, .closeBtn{
     width: 1.3rem;
 }
 
@@ -259,7 +263,9 @@ ul li a{
 .minus-btn,
 .plus-btn,
 .add-to-cart,
-.close-lightbox{
+.close-lightbox,
+.open-btn,
+.close-btn{
     border: none;
     outline: none;
     background-color: transparent;
@@ -408,7 +414,7 @@ ul li a{
         margin: 0 auto;
     }  
     
-    .open-btn, .close-btn{
+    .openBtn, .closeBtn{
         display: none;
     }
 
