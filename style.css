@@ -139,11 +139,14 @@ ul li a{
 .main-img{
     position: relative;
     width: 100%;
+    padding-block-end: 75%;
 }
 
 .main-image{
+    position: absolute;
+    top: 0;
     width: 100%; 
-    height: 18.75rem;
+    height: 100%;
     object-fit: cover;
     object-position: top;
 }

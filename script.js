@@ -51,7 +51,6 @@ const emptyMessage = document.querySelector(".empty-message");
 const deleteBtn = document.querySelector(".delete-icon");
 
 const cartDropdown = document.querySelector(".cart-dropdown");
-const cartContent = document.querySelector(".cart-content");
 const itemPrice = document.getElementById("item-price");
 const itemCount = document.getElementById("item-count");
 
