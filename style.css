@@ -420,6 +420,10 @@ ul li a{
         display: none;
     }
 
+    .main-img{
+        display: none;
+    }
+
     /* navigation bar */
     nav{
         position: relative;
@@ -687,6 +691,7 @@ ul li a{
 
     .main-img{
         display: none;
+        padding-bottom: 0;
     }
 
     .main-thumb{
